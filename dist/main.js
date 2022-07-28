@@ -1,0 +1,1 @@
+(()=>{const e=document.getElementById("location");document.querySelector(".search_btn").addEventListener("click",(()=>{fetch(`https://api.openweathermap.org/data/2.5/weather?q=${e.value}&APPID=e87b1d0df402ffef61de75ccb3df3f8a`,{mode:"cors"}).then((function(e){return e.json()})).then((function(e){console.log(e)}))}))})();
