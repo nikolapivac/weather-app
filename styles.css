@@ -4,8 +4,23 @@
 * {
     font-family: 'Overpass', sans-serif;
     --shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    --head_color: rgb(179, 194, 170);
+    --accent_color: rgb(230, 230, 230);
 }
 
+body {
+    margin: 0;
+}
+
+/* --- HEADER --- */
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--head_color);
+    padding: 10px 20px;
+    box-shadow: var(--shadow);
+} 
 
 .input_container {
     display: flex;
@@ -14,17 +29,19 @@
 }
 
 .search_btn {
-    background-color: white;
+    background-color: var(--head_color);
     border: none;
 }
 
 .search_btn:hover {
     cursor: pointer;
+    color: var(--accent_color);
 }
 
 #location {
-    width: 160px;
-    height: 20px;
+    width: 300px;
+    height: 25px;
+    background-color: var(--accent_color);
     border: 2px solid black;
     border-radius: 12px;
     padding: 2px 6px;
@@ -33,5 +50,18 @@
 
 #location:focus {
     outline: none;
+    box-shadow: var(--shadow);
+}
+
+.degree_toggle {
+    background-color: var(--accent_color);
+    border: 2px solid black;
+    border-radius: 12px;
+    padding: 8px 16px;
+    font-size: 16px;
+}
+
+.degree_toggle:hover {
+    cursor: pointer;
     box-shadow: var(--shadow);
 }
