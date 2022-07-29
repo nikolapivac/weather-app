@@ -1,0 +1,241 @@
+@import url('https://css.gg/search.css');
+@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400&display=swap');
+@import url("./weather-icons.css");
+
+* {
+    font-family: 'Overpass', sans-serif;
+    --shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    --head_color: rgb(179, 194, 170);
+    --text-color: rgb(92, 100, 88);
+    --accent_color: rgb(230, 230, 230);
+}
+
+body {
+    margin: 0;
+    background-color: white;
+}
+
+/* --- HEADER --- */
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--head_color);
+    padding: 10px 20px;
+    box-shadow: var(--shadow);
+} 
+
+.input_container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.search_btn {
+    background-color: var(--head_color);
+    border: none;
+}
+
+.search_btn:hover {
+    cursor: pointer;
+    color: var(--accent_color);
+}
+
+#location {
+    width: 300px;
+    height: 25px;
+    background-color: var(--accent_color);
+    border: 2px solid black;
+    border-radius: 12px;
+    padding: 2px 6px;
+    letter-spacing: 1px;
+}
+
+#location:focus {
+    outline: none;
+    box-shadow: var(--shadow);
+}
+
+.degree_toggle {
+    background-color: var(--accent_color);
+    border: 2px solid black;
+    border-radius: 12px;
+    padding: 8px 16px;
+    font-size: 16px;
+}
+
+.degree_toggle:hover {
+    cursor: pointer;
+    background-color: var(--text-color);
+    color: white;
+    box-shadow: var(--shadow);
+}
+
+/* --- MAIN CONTAINER --- */
+
+.weather_content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 200px 200px 200px;
+    gap: 30px;
+    margin: 80px;
+    letter-spacing: 1px;
+}
+
+.main_card,
+.info_card1,
+.info_card2,
+.weekly {
+    background-color: var(--accent_color);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+}
+
+.main_card {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px;
+    justify-content: space-around;
+}
+
+.citystate {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.temperature{
+    font-size: 160px;
+    margin: 0;
+}
+
+.weather_desc_card {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.descicon {
+    display: flex;
+    justify-content: space-between;
+}
+
+.main_desc {
+    font-size: 100px;
+    margin: 0;
+}
+
+#main_icon {
+    font-size: 150px;
+}
+
+.detail_desc {
+    font-size: 20px;
+    margin: 0;
+    padding-left: 10px;
+}
+
+.info_card1 {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.feels_like,
+.humidity,
+.pressure,
+.wind_speed {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    justify-content: center;
+}
+
+.ic1_title,
+.ic1_content {
+    margin: 0;
+}
+
+.ic1_title,
+.ic2_title {
+    font-size: 20px;
+}
+
+.ic1_content {
+    font-size: 36px;
+}
+
+.info_card2{
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px;
+}
+
+.sunrise,
+.sunset,
+.maxtemp,
+.mintemp {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ic2_title,
+.ic2_content {
+    margin: 0;
+}
+
+.ic2_content {
+    font-size: 16px;
+}
+
+.weekly {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+}
+
+.monday,
+.tuesday,
+.wednesday,
+.thursday,
+.friday,
+.saturday,
+.sunday {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 8px;
+}
+
+.day_name {
+    font-size: 20px;
+}
+
+#weekly_icon {
+    font-size: 50px;
+}
+
+.ic1_title,
+.ic2_title,
+.day_name,
+.main_desc {
+    color: var(--text-color);
+}
