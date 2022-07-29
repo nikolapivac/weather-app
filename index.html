@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather app</title>
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./css/styles.css">
     <script src="./main.js" defer></script>
 </head>
 <body>
@@ -16,5 +16,89 @@
         </div>
         <button class="degree_toggle">°C / °F</button>
     </header>
+    <div class="main_container">
+        <div class="weather_content">
+            <div class="main_card">
+                <div class="citystate">
+                    <h1 class="city_name">London,</h1>
+                    <h3 class="state_name">GB</h3>
+                </div>
+                <h1 class="temperature">23°</h1>
+            </div>
+            <div class="weather_desc_card">
+                <div class="descicon">
+                    <h1 class="main_desc">Cloudy</h1>
+                    <i id="main_icon" class="wi wi-cloudy"></i>
+                </div>
+                <h4 class="detail_desc">Broken clouds</h4>
+            </div>
+            <div class="info_card1">
+                <div class="feels_like">
+                    <h2 class="ic1_title">Feels like</h2>
+                    <h1 class="ic1_content">22°</h1>
+                </div>
+                <div class="humidity">
+                    <h2 class="ic1_title">Humidity</h2>
+                    <h1 class="ic1_content">50%</h1>
+                </div>
+                <div class="pressure">
+                    <h2 class="ic1_title">Pressure</h2>
+                    <h1 class="ic1_content">1016 hPa</h1>
+                </div>
+                <div class="wind_speed">
+                    <h2 class="ic1_title">Wind speed</h2>
+                    <h1 class="ic1_content">6 km/h</h1>
+                </div>
+            </div>
+            <div class="info_card2">
+                <div class="sunrise">
+                    <h2 class="ic2_title">Sunrise:</h2>
+                    <p class="ic2_content">6:00am</p>
+                </div>
+                <div class="sunset">
+                    <h2 class="ic2_title">Sunset:</h2>
+                    <p class="ic2_content">8:00pm</p>
+                </div>
+                <div class="maxtemp">
+                    <h2 class="ic2_title">Max:</h2>
+                    <p class="ic2_content">27</p>
+                </div>
+                <div class="mintemp">
+                    <h2 class="ic2_title">Min:</h2>
+                    <p class="ic2_content">19</p>
+                </div>
+            </div>
+            <div class="weekly">
+                <div class="monday">
+                    <h1 class="day_name">Mon</h1>
+                    <i id="weekly_icon" class="wi wi-cloudy"></i>
+                </div>
+                <div class="tuesday">
+                    <h1 class="day_name">Tue</h1>
+                    <i id="weekly_icon" class="wi wi-rain"></i>
+                </div>
+                <div class="wednesday">
+                    <h1 class="day_name">Wed</h1>
+                    <i id="weekly_icon" class="wi wi-rain"></i>
+                </div>
+                <div class="thursday">
+                    <h1 class="day_name">Thu</h1>
+                    <i id="weekly_icon" class="wi wi-cloudy"></i>
+                </div>
+                <div class="friday">
+                    <h1 class="day_name">Fri</h1>
+                    <i id="weekly_icon" class="wi wi-day-sunny"></i>
+                </div>
+                <div class="saturday">
+                    <h1 class="day_name">Sat</h1>
+                    <i id="weekly_icon" class="wi wi-day-sunny"></i>
+                </div>
+                <div class="Sunday">
+                    <h1 class="day_name">Sun</h1>
+                    <i id="weekly_icon" class="wi wi-day-cloudy"></i>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
