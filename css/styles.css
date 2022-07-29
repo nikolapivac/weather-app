@@ -103,8 +103,14 @@ body {
 
 .citystate {
     display: flex;
+    flex-direction: column;
     align-items: center;
     gap: 5px;
+}
+
+.city_name,
+.state_name {
+    margin: 0;
 }
 
 .temperature{
@@ -168,11 +174,11 @@ body {
 
 .ic1_title,
 .ic2_title {
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .ic1_content {
-    font-size: 36px;
+    font-size: 28px;
 }
 
 .info_card2{
@@ -211,13 +217,11 @@ body {
     padding: 16px;
 }
 
-.monday,
-.tuesday,
-.wednesday,
-.thursday,
-.friday,
-.saturday,
-.sunday {
+.day1,
+.day2,
+.day3,
+.day4,
+.day5 {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -225,7 +229,7 @@ body {
     margin: 8px;
 }
 
-.day_name {
+.date {
     font-size: 20px;
 }
 
@@ -235,7 +239,7 @@ body {
 
 .ic1_title,
 .ic2_title,
-.day_name,
+.date,
 .main_desc {
     color: var(--text-color);
 }
