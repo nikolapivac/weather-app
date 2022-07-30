@@ -8,6 +8,7 @@
     --head_color: rgb(179, 194, 170);
     --text-color: rgb(92, 100, 88);
     --accent_color: rgb(230, 230, 230);
+    --accent_color_opac: rgb(230, 230, 230, 0.6);
 }
 
 body {
@@ -56,22 +57,13 @@ body {
     box-shadow: var(--shadow);
 }
 
-.degree_toggle {
-    background-color: var(--accent_color);
-    border: 2px solid black;
-    border-radius: 12px;
-    padding: 8px 16px;
-    font-size: 16px;
-}
-
-.degree_toggle:hover {
-    cursor: pointer;
-    background-color: var(--text-color);
-    color: white;
-    box-shadow: var(--shadow);
-}
-
 /* --- MAIN CONTAINER --- */
+
+.main_container {
+    
+    background-size: cover;
+    padding: 20px 0;
+}
 
 .weather_content {
     display: grid;
@@ -144,6 +136,8 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background-color: var(--accent_color_opac);
+    border-radius: 16px;
 }
 
 .descicon {
@@ -175,6 +169,8 @@ body {
     align-items: center;
     justify-content: space-around;
     min-width: 630px;
+    background-color: var(--accent_color_opac);
+    border-radius: 16px;
 }
 
 .feels_like,
