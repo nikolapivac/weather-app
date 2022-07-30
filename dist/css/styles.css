@@ -83,9 +83,8 @@ body {
 }
 
 .main_card,
-.info_card1,
 .info_card2,
-.weekly {
+.forecast {
     background-color: var(--accent_color);
     border-radius: 16px;
     box-shadow: var(--shadow);
@@ -99,6 +98,7 @@ body {
     align-items: center;
     padding: 24px;
     justify-content: space-around;
+    min-width: 300px;
 }
 
 .citystate {
@@ -115,6 +115,25 @@ body {
 
 .temperature{
     font-size: 160px;
+    margin: 0;
+    color: var(--text-color);
+}
+
+.date_and_time{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.current_date{
+    border-right: 1px solid grey;
+    padding-right: 16px;
+}
+
+.current_time,
+.current_date{
+    font-size: 18px;
+    font-weight: bold;
     margin: 0;
 }
 
@@ -145,6 +164,7 @@ body {
     font-size: 20px;
     margin: 0;
     padding-left: 10px;
+    font-style: italic;
 }
 
 .info_card1 {
@@ -154,6 +174,7 @@ body {
     gap: 20px;
     align-items: center;
     justify-content: space-around;
+    min-width: 630px;
 }
 
 .feels_like,
@@ -208,7 +229,7 @@ body {
     font-size: 16px;
 }
 
-.weekly {
+.forecast {
     grid-column: 2 / 3;
     grid-row: 3 / 4;
     display: flex;
@@ -217,11 +238,7 @@ body {
     padding: 16px;
 }
 
-.day1,
-.day2,
-.day3,
-.day4,
-.day5 {
+.day {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -229,17 +246,29 @@ body {
     margin: 8px;
 }
 
-.date {
+.day1_title,
+.day2_title,
+.day3_title,
+.day4_title,
+.day5_title {
+    font-size: 20px;
+    color: var(--text-color)
+}
+
+.day > p {
     font-size: 20px;
 }
 
-#weekly_icon {
+#weekly_icon1,
+#weekly_icon2,
+#weekly_icon3,
+#weekly_icon4,
+#weekly_icon5 {
     font-size: 50px;
 }
 
 .ic1_title,
 .ic2_title,
-.date,
 .main_desc {
     color: var(--text-color);
 }

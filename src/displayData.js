@@ -1,16 +1,78 @@
+import { displayForecast } from "./displayForecast";
+import { setMainIcon } from "./setMainIcon";
+
 const displayData = (response) => {
-    const getTimeFromUnix = (timestamp) => {
-        let date = new Date(timestamp * 1000);
-        let hours = date.getHours();
+    const getTimeFromUnix = (response, sun) => {
+        let date;
+        if(sun === "rise"){
+            date = new Date((response.sys.sunrise + response.timezone) * 1000);
+        } else if (sun === "set"){
+            date = new Date((response.sys.sunset + response.timezone) * 1000);
+        }
+        let hours = date.getHours() -2;
+        if (hours === -1){
+            hours = 23;
+        } else if (hours === -2) {
+            hours = 22;
+        }
         let minutes = "0" + date.getMinutes();
         let formattedTime = hours + ":" + minutes.substr(-2);
 
         return formattedTime;
     }
 
+    const getTime = (response) => {
+        let date = new Date((response.dt + response.timezone) * 1000);
+        let hours = date.getHours() - 2;
+        if (hours === -1){
+            hours = 23;
+        } else if (hours === -2) {
+            hours = 22;
+        }
+        let minutes = "0" + date.getMinutes();
+        let formattedTime = hours + ":" + minutes.substr(-2);
+
+        return formattedTime;
+    }
+
+    const getTodaysDate = (response) => {
+        let date = new Date((response.dt + response.timezone) * 1000);
+        let dayOfWeek;
+        switch (date.getDay()){
+            case 0:
+                dayOfWeek = "Sun";
+                break;
+            case 1: 
+                dayOfWeek = "Mon";
+                break;
+            case 2:
+                dayOfWeek = "Tue";
+                break;
+            case 3: 
+                dayOfWeek = "Wed";
+            break;
+            case 4: 
+                dayOfWeek = "Thu";
+            break;
+            case 5:
+                dayOfWeek = "Fri";
+                break;
+            case 6: 
+                dayOfWeek = "Sun";
+                break;
+        }
+        let day = date.getDate();
+        let month = date.getMonth() + 1;
+        let year = date.getFullYear();
+        
+        return`${dayOfWeek}, ${day}/${month}/${year}`;
+    }
+
     const cityName = document.querySelector(".city_name");
     const stateName = document.querySelector(".state_name");
     const temperature = document.querySelector(".temperature");
+    const currentDate = document.querySelector(".current_date");
+    const currentTime = document.querySelector(".current_time");
     const mainDescription = document.querySelector(".main_desc");
     const detailDescription = document.querySelector(".detail_desc");
     const feelsLike = document.getElementById("feels");
@@ -25,28 +87,21 @@ const displayData = (response) => {
     cityName.textContent = `${response.name}`;
     stateName.textContent = `${response.sys.country}`;
     temperature.textContent = `${Math.round(response.main.temp)}°`;
+    currentDate.textContent = `${getTodaysDate(response)}`;
+    currentTime.textContent = `${getTime(response)} h`;
     mainDescription.textContent = `${response.weather[0].main}`;
+    setMainIcon(response);
     detailDescription.textContent = `${response.weather[0].description}`;
     feelsLike.textContent = `${Math.round(response.main.feels_like)}°`;
     humidity.textContent = `${response.main.humidity}%`;
     pressure.textContent = `${response.main.pressure} hPa`;
     windSpeed.textContent = `${Math.round(response.wind.speed)} km/h`;
-    sunrise.textContent = `${getTimeFromUnix(response.sys.sunrise)} h`;
-    sunset.textContent = `${getTimeFromUnix(response.sys.sunset)} h`;
+    sunrise.textContent = `${getTimeFromUnix(response, "rise")} h`;
+    sunset.textContent = `${getTimeFromUnix(response, "set")} h`;
     maxTemp.textContent = `${Math.round(response.main.temp_max)}°`;
     minTemp.textContent = `${Math.round(response.main.temp_min)}°`;
 
-    const getForecast = () => {
-        fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${cityName.textContent}&appid=e87b1d0df402ffef61de75ccb3df3f8a&units=metric`, {mode: "cors"})
-        .then(function(forecast) {
-            return forecast.json();
-        })
-        .then(function(forecast) {
-            console.log(forecast);
-        })
-    }
-
-    getForecast();
+    displayForecast(cityName);
 }
 
 export { displayData } 
