@@ -40,11 +40,11 @@ const displayForecast = (cityName) => {
         const temp4 = document.getElementById("day_temp4");
         const temp5 = document.getElementById("day_temp5");
 
-        temp1.textContent = `${Math.round(forecast.list[7].main.temp)}`;
-        temp2.textContent = `${Math.round(forecast.list[15].main.temp)}`;
-        temp3.textContent = `${Math.round(forecast.list[23].main.temp)}`;
-        temp4.textContent = `${Math.round(forecast.list[31].main.temp)}`;
-        temp5.textContent = `${Math.round(forecast.list[39].main.temp)}`;
+        temp1.textContent = `${Math.round(forecast.list[7].main.temp)}°`;
+        temp2.textContent = `${Math.round(forecast.list[15].main.temp)}°`;
+        temp3.textContent = `${Math.round(forecast.list[23].main.temp)}°`;
+        temp4.textContent = `${Math.round(forecast.list[31].main.temp)}°`;
+        temp5.textContent = `${Math.round(forecast.list[39].main.temp)}°`;
 
         setForecastIcons(forecast.list[7], 1);
         setForecastIcons(forecast.list[15], 2);
