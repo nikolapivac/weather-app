@@ -60,7 +60,6 @@ body {
 /* --- MAIN CONTAINER --- */
 
 .main_container {
-    
     background-size: cover;
     padding: 20px 0;
 }
@@ -72,6 +71,7 @@ body {
     gap: 30px;
     margin: 80px;
     letter-spacing: 1px;
+    height: 100vh;
 }
 
 .main_card,
@@ -267,18 +267,36 @@ body {
     color: var(--text-color);
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 500px) {
     .weather_content{
         display: flex;
         flex-direction: column;
+        width: 320px;
+        height: 100%;
+        margin: auto;
+    }
+
+    .main_card{
+        background-color: var(--accent_color_opac);
+        border-radius: 8px;
     }
 
     .city_name{
         font-size: 24px;
     }
+
+    .current_date,
+    .current_time {
+        font-size: 16px;
+        margin: 8px;
+    }
     
     .temperature{
         font-size: 100px;
+    }
+
+    .weather_desc_card {
+        border-radius: 8px;
     }
 
     .main_desc {
@@ -290,17 +308,93 @@ body {
     }
 
     .info_card1 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        border-radius: 8px;
+    }
+
+    .info_card1 > div {
+        margin: 8px;
+    }
+
+    .info_card2{
+        background-color: var(--accent_color_opac);
+        border-radius: 8px;
+        gap: 8px;
+    }
+
+    .forecast{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        background-color: var(--accent_color_opac);
+        border-radius: 8px;
+    }
+}
+
+
+@media only screen and (min-width: 500px) and (max-width: 920px) {
+    .weather_content{
         display: flex;
         flex-direction: column;
+        width: 400px;
+        height: 100%;
+        margin: auto;
+        margin-bottom: 50px;
+    }
+
+    .main_card{
+        background-color: var(--accent_color_opac);
+        border-radius: 8px;
+    }
+
+    .city_name{
+        font-size: 24px;
+    }
+
+    .current_date,
+    .current_time {
+        font-size: 16px;
+        margin: 8px;
+    }
+    
+    .temperature{
+        font-size: 100px;
+    }
+
+    .weather_desc_card {
+        border-radius: 8px;
+    }
+
+    .main_desc {
+        font-size: 48px;
+    }
+
+    #main_icon {
+        font-size: 48px;
+    }
+
+    .info_card1 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        border-radius: 8px;
+    }
+
+    .info_card1 > div {
+        margin: 8px;
+    }
+
+    .info_card2{
+        background-color: var(--accent_color_opac);
+        border-radius: 8px;
+        gap: 8px;
     }
 
     .forecast{
         display: flex;
-        flex-direction: column;
+        background-color: var(--accent_color_opac);
+        border-radius: 8px;
     }
-
-    .day {
-        border-bottom: 1px solid grey;
-    }
-
-  }
+}
